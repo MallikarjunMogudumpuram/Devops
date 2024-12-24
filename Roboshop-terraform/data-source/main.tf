@@ -3,5 +3,5 @@ data "azurerm_resource_group" "example" {
 }
 
 output "rg" {
-   value = data.azurerm_resource_group
+   value = data.azurerm_resource_group.example
 }
