@@ -1,92 +1,53 @@
-resource "azurerm_network_interface" "example" {
-   name                = "test-nic"
-   location            = data.azurerm_resource_group.example.location
-   resource_group_name = data.azurerm_resource_group.example.name
-   ip_configuration {
-      name                          = "internal"
-      subnet_id                     = data.azurerm_subnet.example.id
-      private_ip_address_allocation = "Dynamic"
-   }
-}
-resource "azurerm_virtual_machine" "main" {
-   name                = "test-vm"
-   location            = data.azurerm_resource_group.example.location
-   resource_group_name = data.azurerm_resource_group.example.name
-   network_interface_ids = [azurerm_network_interface.example.id]
-   vm_size             = "Standard_DS1_v2"
-
-# Uncomment this line to delete the OS disk automatically when deleting the VM
-   delete_os_disk_on_termination = true
-
-# Uncomment this line to delete the data disks automatically when deleting the VM
-# delete_data_disks_on_termination = true
-
-storage_image_reference {
-publisher = "Canonical"
-offer     = "0001-com-ubuntu-server-jammy"
-sku       = "22_04-lts"
-version   = "latest"
-}
-storage_os_disk {
-name              = "myosdisk1"
-caching           = "ReadWrite"
-create_option     = "FromImage"
-managed_disk_type = "Standard_LRS"
-}
-os_profile {
-computer_name  = "hostname"
-admin_username = "testadmin"
-admin_password = "Password1234!"
-}
-os_profile_linux_config {
-disable_password_authentication = false
-}
-tags = {
-environment = "staging"
-}
+variable "s1" {
+  default = "Hello"
 }
 
+variable "n1" {
+  default = 2
+}
+
+variable "d1" {
+  default = True
+}
+
+#data types that terraform supports
+
+#1. strings
+#2. values
+#3. Boolean
+
+#Note: string only support quotes, that too double quotes, terraform does not support single quotes.
+
+variable "b1" {
+  default = "Hello"
+}
+
+variable "e1" {
+  default = [Hello, 2, False]
+}
+
+variable "g1" {
+  default = {
+    Course = "devops"
+    Correct = False
+  }
+
+}
+
+#variable type that supports terraform
+#1. plain
+#2. list - A key that have multiple values it supports different data types
+#3. Map - A key having and key and values
+
+#accessing a variable
+
+output "b1" {
+  value = "var.b1"
+}
+
+#while accessing a variable if we have some string combination then we can use it $[{}
+output "e1" {
+  value = "${var.b1} - John"
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# output "rg" {
-#    value = data.azurerm_resource_group.example
-# }
-#
-# #configure the microsoft azure provider
-#
-# provider "azurerm" {
-#    features {}
-#    subscription_id = "c1585f6e-0e58-456f-aed6-fc7b78c32d7c"
-# }
