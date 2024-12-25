@@ -74,3 +74,6 @@ variable "env" {}
 output "o6"{
   value = var.env
 }
+
+#terraform can pick files automatically if the files are *.auto.tfvars
+
