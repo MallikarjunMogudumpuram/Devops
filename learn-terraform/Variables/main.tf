@@ -23,7 +23,7 @@ variable "b1" {
 }
 
 variable "e1" {
-  default = [Hello, 2, true]
+  default = ["Hello", 2, true]
 }
 
 variable "g1" {
