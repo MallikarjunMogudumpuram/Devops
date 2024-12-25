@@ -7,7 +7,7 @@ variable "n1" {
 }
 
 variable "d1" {
-  default = True
+  default = true
 }
 
 #data types that terraform supports
@@ -23,13 +23,13 @@ variable "b1" {
 }
 
 variable "e1" {
-  default = [Hello, 2, False]
+  default = [Hello, 2, true]
 }
 
 variable "g1" {
   default = {
     Course = "devops"
-    Correct = False
+    Correct = true
   }
 
 }
