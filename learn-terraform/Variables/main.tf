@@ -70,7 +70,7 @@ output "o5"{
 # we can also access from other tfvars but we have to parse it.
 #eg:
 
-variable "ENV" {}
+variable "env" {}
 output "o6"{
-  value = "var.ENV"
+  value = "var.env"
 }
