@@ -1,6 +1,3 @@
-
-
-
 resource "azurerm_network_interface" "example" {
    name                = "test-nic"
    location            = data.azurerm_resource_group.example.location

@@ -1,4 +1,9 @@
-provider "azurerm" {
-  features {}
-  subscription_id = "c1585f6e-0e58-456f-aed6-fc7b78c32d7c"
+data "azurerm_resource_group" "example" {
+  name = "project-setup"
+}
+
+data "azurerm_subnet" "example" {
+  name                 = "default"
+  virtual_network_name = "vnet1"
+  resource_group_name  = data.azurerm_resource_group.example.name
 }
