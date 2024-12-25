@@ -60,7 +60,9 @@ output "o4"{
 }
 
 #we are hardcoded all variables but most time it comes as input
-variable "m1" {}
+
+variable "z1" {}
+
 output "o5"{
-  value = var.o5
+  value = var.z1
 }
