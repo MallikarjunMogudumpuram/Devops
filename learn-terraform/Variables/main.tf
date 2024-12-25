@@ -71,6 +71,6 @@ output "o5"{
 #eg:
 
 variable "ENV" {}
-output "ENV" {
+output "o6"{
   value = "var.ENV"
 }
