@@ -60,9 +60,17 @@ output "o4"{
 }
 
 #we are hardcoded all variables but most time it comes as input
-
+#values from terraform tfvars terraform only pics from terraform.tfvars, incase if we want from others we have to parse
 variable "z1" {}
 
 output "o5"{
   value = var.z1
+}
+
+# we can also access from other tfvars but we have to parse it.
+#eg:
+
+variable "ENV" {}
+output "ENV" {
+  value = "var.ENV"
 }
