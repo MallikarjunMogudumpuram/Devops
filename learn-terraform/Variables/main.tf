@@ -42,7 +42,7 @@ variable "g1" {
 #accessing a variable
 
 output "b1" {
-  value = "var.b1"
+  value = var.b1
 }
 
 #while accessing a variable if we have some string combination then we can use it $[{}
