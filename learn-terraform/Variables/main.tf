@@ -56,5 +56,5 @@ output "o3"{
 }
 
 output "o4"{
-  value = var.g1["devops"]
+  value = var.g1["Course"]
 }
