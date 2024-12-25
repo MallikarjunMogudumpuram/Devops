@@ -1,1 +1,1 @@
-z1 = "Hyderabad"
+z1 = 1000
