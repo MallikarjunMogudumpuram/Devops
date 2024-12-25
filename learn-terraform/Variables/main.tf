@@ -58,3 +58,9 @@ output "o3"{
 output "o4"{
   value = var.g1["Course"]
 }
+
+#we are hardcoded all variables but most time it comes as input
+
+output "z1" {
+  value = "var.z1"
+}
