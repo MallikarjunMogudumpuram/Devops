@@ -40,18 +40,21 @@ variable "g1" {
 #3. Map - A key having and key and values
 
 #accessing a variable
-
-output o1{
+output "o1"{
   value = var.b1
 }
 
 #while accessing a variable if we have some string combination then we can use it $[{}
-output o2
+output "o2"{
   value = "${var.b1} - John"
 }
 
 #access a list of values
 
-output "o"{
+output "o3"{
   value = var.e1[0]
+}
+
+output "o4"{
+  value = var.g1["devops"]
 }
