@@ -72,5 +72,5 @@ output "o5"{
 
 variable "env" {}
 output "o6"{
-  value = "var.env"
+  value = var.env
 }
