@@ -52,6 +52,6 @@ output o2
 
 #access a list of values
 
-output "o3{
+output "o"{
   value = var.e1[0]
 }
