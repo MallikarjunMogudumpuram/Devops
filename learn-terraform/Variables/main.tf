@@ -41,13 +41,17 @@ variable "g1" {
 
 #accessing a variable
 
-output "b1" {
+output o1{
   value = var.b1
 }
 
 #while accessing a variable if we have some string combination then we can use it $[{}
-output "e1" {
+output o2
   value = "${var.b1} - John"
 }
 
+#access a list of values
 
+output "o3{
+  value = var.e1[0]
+}
