@@ -8,7 +8,7 @@ resource "null_resource" "demo" {
   count = length(var.practise)
 
   provisioner "local-exec" {
-    count = "echo ${var.practise[count.index]}"
+    command = "echo ${var.practise[count.index]}"
   }
 }
 
