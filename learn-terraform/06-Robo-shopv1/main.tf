@@ -1,5 +1,5 @@
 resource "azurerm_network_interface" "front-end" {
-   name                = "test-nic"
+   name                = "front-end-nic"
    location            = data.azurerm_resource_group.example.location
    resource_group_name = data.azurerm_resource_group.example.name
    ip_configuration {
