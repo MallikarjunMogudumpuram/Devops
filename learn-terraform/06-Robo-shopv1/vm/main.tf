@@ -6,7 +6,7 @@ resource "azurerm_network_interface" "main" {
       name                          = "internal"
       subnet_id                     = data.azurerm_subnet.main.id
       private_ip_address_allocation = "Dynamic"
-      public_ip_address_id          = "azurerm_public_ip.front-end.id"
+      public_ip_address_id          = "azurerm_public_ip.main.id"
    }
 }
 
