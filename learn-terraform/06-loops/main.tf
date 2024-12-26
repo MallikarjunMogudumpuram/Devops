@@ -14,8 +14,8 @@ resource "null_resource" "demo" {
 resource "local_file" "foo" {
   count    = length(var.practise)
   content  = var.practise[count.index]
-  filename = "/tmp-$(count.index)"
+  filename = "/tmp/file-$(count.index)"
 }
 variable "practise" {
-  default = ["orange", "banana"]
+  default = ["lemon","orange", "banana"]
 }
