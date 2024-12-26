@@ -27,7 +27,7 @@ resource "azurerm_virtual_machine" "main" {
    name                = "${var.component}-nic"
    location            = data.azurerm_resource_group.main.location
    resource_group_name = data.azurerm_resource_group.main.name
-   network_interface_ids = [azurerm_network_interface.main.id]
+   network_interface_ids = azurerm_network_interface[count.index]
    vm_size             = "Standard_DS1_v2"
 
 # Uncomment this line to delete the OS disk automatically when deleting the VM
