@@ -1,12 +1,12 @@
-module "front-end" {
-   source    = "./vm"
-   component = "front-end"
-}
-
-module "catalogue" {
-   source    = "./vm"
-   component = "catalogue"
-}
+# module "front-end" {
+#    source    = "./vm"
+#    component = "front-end"
+# }
+#
+# module "catalogue" {
+#    source    = "./vm"
+#    component = "catalogue"
+# }
 
 
 
