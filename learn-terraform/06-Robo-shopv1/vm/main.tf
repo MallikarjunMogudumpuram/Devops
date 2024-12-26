@@ -14,7 +14,7 @@ resource "azurerm_public_ip" "main" {
    name                = "${var.component}-ip"
    resource_group_name = "data.azurerm_resource_group.main.name"
    location            = "data.azurerm_resource_group.main.location"
-   allocation_method   = "Dynamic"
+   allocation_method   = "Static"
 }
 resource "azurerm_virtual_machine" "main" {
    name                = "${var.component}-nic"
