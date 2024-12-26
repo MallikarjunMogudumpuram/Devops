@@ -11,7 +11,11 @@ resource "null_resource" "demo" {
     command = "echo ${var.practise[count.index]}"
   }
 }
-
+resource "local_file" "foo" {
+  count    = length(var.practise)
+  content  = var.practise[count.index]
+  filename = "/tmp-$(count.index)"
+}
 variable "practise" {
-  default = ["apple", "orange", "banana"]
+  default = ["orange", "banana"]
 }
