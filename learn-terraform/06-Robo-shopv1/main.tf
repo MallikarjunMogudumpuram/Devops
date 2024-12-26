@@ -1,10 +1,10 @@
 module "front-end" {
-   source = "./vm"
+   source    = "./vm"
    component = "front-end"
 }
 
 module "catalogue" {
-   source = "./vm"
+   source    = "./vm"
    component = "catalogue"
 }
 
