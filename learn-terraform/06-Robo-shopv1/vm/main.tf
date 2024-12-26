@@ -4,12 +4,11 @@ resource "azurerm_network_interface" "main" {
    resource_group_name = data.azurerm_resource_group.main.name
    ip_configuration {
       name                          = "internal"
-      subnet_id                     = data.azurerm_subnet.main.id
+      subnet_id                     = data.azurerm_subnet.example.id
       private_ip_address_allocation = "Dynamic"
       public_ip_address_id          = "azurerm_public_ip.main.id"
    }
 }
-
 resource "azurerm_public_ip" "main" {
    name                = "${var.component}-ip"
    resource_group_name = "data.azurerm_resource_group.main.name"
