@@ -1,4 +1,5 @@
 resource "azurerm_public_ip" "practise" {
+  count             = length(var.component)
 name                = "${var.component}-ip"
 resource_group_name = data.azurerm_resource_group.main.name
 location            = data.azurerm_resource_group.main.location
@@ -9,6 +10,7 @@ allocation_method   = "Static"
 }
 
 resource "azurerm_network_interface" "main" {
+  count             = length(var.component)
   name                = "${var.component}-nic"
   location            = data.azurerm_resource_group.main.location
   resource_group_name = data.azurerm_resource_group.main.name
@@ -21,6 +23,7 @@ resource "azurerm_network_interface" "main" {
 }
 
 resource "azurerm_virtual_machine" "main" {
+  count             = length(var.component)
    name                = "${var.component}-nic"
    location            = data.azurerm_resource_group.main.location
    resource_group_name = data.azurerm_resource_group.main.name
