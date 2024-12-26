@@ -13,6 +13,5 @@ resource "null_resource" "demo" {
 }
 
 variable "practise" {
-  default = [
-  "apple", "orange", "banana"]
+  default = ["apple", "orange", "banana"]
 }
