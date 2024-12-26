@@ -1,5 +1,4 @@
 resource "azurerm_public_ip" "practise" {
-  count             = var.component[count.index]
 name                = "${var.component}-ip"
 resource_group_name = data.azurerm_resource_group.main.name
 location            = data.azurerm_resource_group.main.location
@@ -10,7 +9,6 @@ allocation_method   = "Static"
 }
 
 resource "azurerm_network_interface" "main" {
-  count               = var.component[count.index]
   name                = "${var.component}-nic"
   location            = data.azurerm_resource_group.main.location
   resource_group_name = data.azurerm_resource_group.main.name
@@ -18,16 +16,15 @@ resource "azurerm_network_interface" "main" {
     name                          = "internal"
     subnet_id                     = data.azurerm_subnet.example.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.practise[count.index]
+    public_ip_address_id          = azurerm_public_ip.practise.id
   }
 }
 
 resource "azurerm_virtual_machine" "main" {
-  count                  = var.component[count.index]
    name                  = "${var.component}-nic"
    location              = data.azurerm_resource_group.main.location
    resource_group_name   = data.azurerm_resource_group.main.name
-   network_interface_ids = azurerm_network_interface[count.index]
+   network_interface_ids = azurerm_network_interface.main.id
    vm_size                = "Standard_DS1_v2"
 
 # Uncomment this line to delete the OS disk automatically when deleting the VM
