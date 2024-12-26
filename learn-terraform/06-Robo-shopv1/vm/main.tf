@@ -1,7 +1,7 @@
 resource "azurerm_public_ip" "practise" {
 name                = "${var.component}-ip"
-resource_group_name = "data.azurerm_resource_group.main.name"
-location            = "data.azurerm_resource_group.main.location"
+resource_group_name = data.azurerm_resource_group.main.name
+location            = data.azurerm_resource_group.main.location
 allocation_method   = "Static"
   tags = {
     environment = "staging"
