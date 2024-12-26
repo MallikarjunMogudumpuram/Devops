@@ -1,4 +1,4 @@
-resource "azurerm_public_ip" "main" {
+resource "azurerm_public_ip" "practise" {
 name                = "${var.component}-ip"
 resource_group_name = "data.azurerm_resource_group.main.name"
 location            = "data.azurerm_resource_group.main.location"
@@ -16,7 +16,7 @@ resource "azurerm_network_interface" "main" {
     name                          = "internal"
     subnet_id                     = data.azurerm_subnet.example.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = [azurerm_public_ip.main.id]
+    public_ip_address_id          = [azurerm_public_ip.practise.id]
   }
 }
 
