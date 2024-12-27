@@ -6,21 +6,21 @@ module "front-end" {
 
 module "catalogue" {
   source = "./vm"
-  example = "front-end"
+  example = "catalogue"
 }
 
 module "mysql" {
   source = "./vm"
-  example = "front-end"
+  example = "mysql"
 }
 
 module "redis-cache" {
   source = "./vm"
-  example = "front-end"
+  example = "redis-cache"
 }
 
 module "rabbit-mq" {
   source = "./vm"
-  example = "front-end"
+  example = "rabbit-mq"
 }
 
