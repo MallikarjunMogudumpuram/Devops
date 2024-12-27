@@ -15,7 +15,7 @@ variable "components" {
     }
 
     catalouge = {
-      name    = "catalouge "
+      name    = "catalouge"
       vm_size = "Standard_DS1_v2"
     }
     cart      = {
