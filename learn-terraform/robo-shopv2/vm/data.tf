@@ -5,6 +5,6 @@ data "azurerm_resource_group" "practise" {
 data "azurerm_subnet" "example" {
   name                 = "default"
   virtual_network_name = "vnet1"
-  resource_group_name  = data.azurerm_subnet.example.id
+  resource_group_name  = data.azurerm_resource_group.practise.id
 }
 
