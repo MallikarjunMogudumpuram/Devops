@@ -1,6 +1,5 @@
 data "azurerm_resource_group" "practise" {
   name = "project-setup"
-  location = "UK West"
 }
 
 data "azurerm_subnet" "example" {
