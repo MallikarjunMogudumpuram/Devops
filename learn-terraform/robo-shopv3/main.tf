@@ -5,35 +5,13 @@ module "components" {
   vm_size   = each.value["vm_size"]
 
 }
-
 variable "components" {
   default = {
-
-    front-end = {
-      name    = "front-end"
-      vm_size = "Standard_DS1_v2"
-    }
-
-    catalouge = {
-      name    = "catalouge"
-      vm_size = "Standard_DS1_v2"
-    }
-    cart      = {
-      name    = "cart"
-      vm_size = "Standard_DS1_v2"
-    }
-    mysql = {
-      name    = "mysql"
-      vm_size = "Standard_DS1_v2"
-    }
-    rabit-mq = {
-      name    = "rabit-mq"
-      vm_size = "Standard_DS1_v2"
-    }
-    user = {
-      name    = "user"
-      vm_size = "Standard_DS1_v2"
-    }
+    value = front-end
+    value = catalouge
+    value = cart
+    value = mysql
+    value = rabbitmq
 
   }
 }
