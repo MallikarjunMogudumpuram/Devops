@@ -1,4 +1,4 @@
-resource "azurerm_public_ip" "example" {
+resource "azurerm_public_ip" "public_ip_test" {
   name                = var.example
   resource_group_name = data.azurerm_resource_group.practise.name
   location            = data.azurerm_resource_group.practise.location
@@ -7,7 +7,7 @@ resource "azurerm_public_ip" "example" {
     environment = "Production"
   }
 }
-resource "azurerm_network_interface" "example" {
+resource "azurerm_network_interface" "nic_test" {
   name                = "${var.example}-nic"
   location            = data.azurerm_resource_group.practise.location
   resource_group_name = data.azurerm_resource_group.practise.name
@@ -16,14 +16,14 @@ resource "azurerm_network_interface" "example" {
     name                          = "internal"
     subnet_id                     = data.azurerm_subnet.example.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.example.id
+    public_ip_address_id          = azurerm_public_ip.public_ip_test.id
   }
 }
-resource "azurerm_virtual_machine" "main" {
+resource "azurerm_virtual_machine" "vm_test" {
   name                  = "${var.example}-vm"
   location              = data.azurerm_resource_group.practise.location
   resource_group_name   = data.azurerm_resource_group.practise.name
-  network_interface_ids = [azurerm_network_interface.example.id]
+  network_interface_ids = [azurerm_network_interface.nic_test.id]
   vm_size               = "Standard_DS1_v2"
 
   # Uncomment this line to delete the OS disk automatically when deleting the VM
