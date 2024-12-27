@@ -7,31 +7,31 @@ module "components" {
 }
 
 variable "components" {
-  default =
-  {
+  default = {
+
     front-end = {
-      name    = front-end
+      name    = "front-end"
       vm_size = "Standard_DS1_v2"
     }
 
     catalouge = {
-      name    = front-end
+      name    = "catalouge "
       vm_size = "Standard_DS1_v2"
     }
     cart      = {
-      name    = front-end
+      name    = "cart"
       vm_size = "Standard_DS1_v2"
     }
     mysql = {
-      name    = front-end
+      name    = "mysql"
       vm_size = "Standard_DS1_v2"
     }
     rabit-mq = {
-      name    = front-end
+      name    = "rabit-mq"
       vm_size = "Standard_DS1_v2"
     }
     user = {
-      name    = front-end
+      name    = "user"
       vm_size = "Standard_DS1_v2"
     }
 
