@@ -9,8 +9,8 @@ resource "azurerm_public_ip" "example" {
 }
 resource "azurerm_network_interface" "example" {
   name                = "${var.example}-nic"
-  location            = data.azurerm_resource_group.practise.name
-  resource_group_name = data.azurerm_resource_group.practise.location
+  location            = data.azurerm_resource_group.practise.location
+  resource_group_name = data.azurerm_resource_group.practise.name
 
   ip_configuration {
     name                          = "internal"
